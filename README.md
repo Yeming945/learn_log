@@ -70,3 +70,15 @@ urlpatterns = [
     path('', views.index, name='index'),    # 主页
 ]
 ```
+### 18.4 创建其他网页
+##### 18.4.2 显示所有主题的页面
+1. URL模式
+```
+learning_logs\urls.py 修改代码
+原书代码
+# 显示所有的主题
+url(r'^topics/$', views.topics, name='topics')
+# 修改为
+path('topics/', views.topics, name='topics')
+```
+##### 18.4.3 显示特定主题的页面
