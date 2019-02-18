@@ -1,4 +1,5 @@
-{% block 'learnings_log/base.html'}
+
+{% extends 'learning_logs/base.html' %}
 
 {% block content %}
 
@@ -7,10 +8,10 @@
 <ul>
     {% for entry in entries %}
         <li>
-            <p>{{ entry.date_added|date:'M d, Y H:i'}}</p>
+            <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
             <p>{{ entry.text|linebreaks }}</p>
         </li>
-    { % empty %}
+    {% empty %}
     <li>
         There are no entries for this topic yet.
     </li>

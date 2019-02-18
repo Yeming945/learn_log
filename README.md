@@ -82,3 +82,12 @@ url(r'^topics/$', views.topics, name='topics')
 path('topics/', views.topics, name='topics')
 ```
 ##### 18.4.3 显示特定主题的页面
+```
+learning_logs\urls.py 修改代码
+原书代码
+# 显示所有的主题
+url(r'^topics/(?P<topic_id>\d+)/$', views.topic, name='topic')
+# 修改为
+path('topics/<topic_id>/', views.topic, name='topic')
+
+```
