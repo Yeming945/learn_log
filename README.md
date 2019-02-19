@@ -1,4 +1,4 @@
-### Django入门
+### 18 Django入门
 #### 18.1 建立项目
 ##### 18.1.5 安装 Django 
 pip install Django
@@ -98,12 +98,19 @@ path('topics/<topic_id>/', views.topic, name='topic')
 from django.core.urlresolvers import reverse 
 # 修改为
 from django.urls import reverse
+```
+
+#### 19.1.2 添加新条目
+``` python
 # learning_logs\urls.py 修改代码
 # 原书代码
 url(r'^new_entry/(?P<topic_id>\d+)/$', views.new_entry, name='new_entry')
 # 修改为
 path('new_topic/', views.new_topic, name='new_topic')
-
-
-
+```
+#### 19.1.3 编辑条目
+``` python
+# learning_logs\urls.py 修改代码
+url(r'^edit_entry/(?P<entry_id>\d+)/$', views.edit_entry, name='edit_entry')
+path('edit_entry/<entry_id>/', views.edit_entry, name='edit_entry')
 ```
