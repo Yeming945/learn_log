@@ -135,3 +135,15 @@ LoginView.template_name = 'user/login.html'
 urlpatterns = [
     path('login/', LoginView.as_view(), name='login')
 ]
+```
+#### 19.2.3 注销
+``` python
+# users\urls.py 修改代码
+url(r'^logout/$', views.logout_view, name='logout'), 
+# 修改为
+path('logout/', views.logout_view, name='logout'),
+# users\views.py 修改代码
+from django.core.urlresolvers import reverse
+# 修改为
+from django.urls import reverse
+```

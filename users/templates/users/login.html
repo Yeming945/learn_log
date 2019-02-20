@@ -5,7 +5,7 @@
     <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
 
-    <form method="POST" action="{% url 'user:login' %}">
+    <form method="post" action="{% url 'users:login' %}">
         {% csrf_token %}
         {{ form.as_p }}
 
