@@ -147,3 +147,16 @@ from django.core.urlresolvers import reverse
 # 修改为
 from django.urls import reverse
 ```
+
+#### 19.2.4 注册页面
+``` python 
+# urls.py 
+url(r'^register/$', views.register, name='register')
+# after
+path('register/', views.register, name='register')
+# views.py
+from django.core.urlresolvers import reverse
+after
+from django.urls import reverse
+
+```

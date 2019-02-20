@@ -9,8 +9,9 @@ app_name = 'users'
 LoginView.template_name = 'users/login.html'
 urlpatterns = [
     # 登录页面
-    # url(r'^login/$', login, {'template_name': 'users/login.html'}, name='login 原书代码'), 
+    # url(r'^login/$', login, {'template_name': 'users/login.html'}, name='login 原书代码'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', views.logout_view, name='logout'),
+    path('register/', views.register, name='register'),
 
 ]
