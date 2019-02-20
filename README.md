@@ -114,3 +114,24 @@ path('new_topic/', views.new_topic, name='new_topic')
 url(r'^edit_entry/(?P<entry_id>\d+)/$', views.edit_entry, name='edit_entry')
 path('edit_entry/<entry_id>/', views.edit_entry, name='edit_entry')
 ```
+### 19.2.2 登录页面
+``` python
+# users\urls.py 修改代码
+"""为应用程序users定义URL模式"""
+from django.conf.urls import url
+from django.contrib.auth.views import login
+from . import views
+
+urlpatterns = [
+    url(r'^login/$', login, {'template_name':'users/login.html'} name='login'),
+] 
+# 修改为
+from django.urls import path, include
+from django.contrib.auth.views import LoginView
+from . import views
+
+app_name = 'users'
+LoginView.template_name = 'user/login.html'
+urlpatterns = [
+    path('login/', LoginView.as_view(), name='login')
+]
