@@ -161,5 +161,11 @@ from django.urls import reverse
 
 ```
 ### 19.3 让用户拥有自己的数据
-#### 19.3.1 使用@login_required 限制访问
+#### 19.3.2 将数据关联到用户
+``` python
+# models.py 
+owner = models.ForeignKey(User)
+# after
+owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
+```
